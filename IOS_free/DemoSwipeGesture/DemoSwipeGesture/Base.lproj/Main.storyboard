@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DemoSwipeGesture" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGx-yJ-3gG">
+                                <rect key="frame" x="16" y="181" width="343" height="316"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Exy-76-c3B" appends="YES" id="fdN-6w-Ue5"/>
+                                    <outletCollection property="gestureRecognizers" destination="BYr-CV-g9Z" appends="YES" id="c72-bH-yR1"/>
+                                    <outletCollection property="gestureRecognizers" destination="XT5-nc-Jid" appends="YES" id="yZk-pu-uyI"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgHinh" destination="DGx-yJ-3gG" id="3eF-oA-Fd0"/>
+                        <outlet property="swipeBack" destination="Exy-76-c3B" id="wG0-31-2pa"/>
+                        <outlet property="swipeNext" destination="BYr-CV-g9Z" id="mVL-S3-Xmo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="Exy-76-c3B">
+                    <connections>
+                        <action selector="swipeBack:" destination="BYZ-38-t0r" id="AgR-WU-yVO"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="BYr-CV-g9Z">
+                    <connections>
+                        <action selector="swipeNext:" destination="BYZ-38-t0r" id="tsr-G0-ZO6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <rotationGestureRecognizer id="XT5-nc-Jid">
+                    <connections>
+                        <action selector="rotatoryImg:" destination="BYZ-38-t0r" id="wNk-Wf-C7A"/>
+                    </connections>
+                </rotationGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="354" y="126"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,11 @@
+{
+    "post":{
+        "name":"Mark zuckerberg",
+        "profileImage":"markzuckerberg",
+        "status":"Hello World!",
+        "statusImage":"apple",
+        "numLikes":12000,
+        "numComments":123,
+        "statusImageUrl":"https://scontent.fsgn2-2.fna.fbcdn.net/v/t1.0-9/20246455_849379035211125_2563071567637698968_n.jpg?oh=00dce62a69e3f4448a8dc6e90fa922db&oe=5A3198B5"
+    }
+}
