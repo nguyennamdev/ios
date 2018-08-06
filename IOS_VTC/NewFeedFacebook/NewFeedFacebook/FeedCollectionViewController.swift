@@ -41,11 +41,14 @@ class FeedCollectionViewController: UICollectionViewController, UICollectionView
                 let jsonDictionary = try JSONSerialization.jsonObject(with: data as Data, options: .mutableContainers)
                 
                 if let dictionary = jsonDictionary as? [String:Any]{
-                    if let postDictionary = dictionary["post"] as? [String:AnyObject]{
-                        let post = Post()
-                        post.setValuesForKeyWithDictionary(dictionary: postDictionary)
-                        print(post.name!)
-                        posts?.append(post)
+                    if let items = dictionary["items"] as? Array<AnyObject>{
+                        for i in items{
+                            if let dict = i as? [String:Any]{
+                                if let id = dict["sku"] as? String{
+                                    print(id)
+                                }
+                            }
+                        }
                     }
                 }
                 

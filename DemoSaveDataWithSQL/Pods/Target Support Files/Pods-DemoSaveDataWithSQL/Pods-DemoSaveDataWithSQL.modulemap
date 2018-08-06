@@ -1,0 +1,6 @@
+framework module Pods_DemoSaveDataWithSQL {
+  umbrella header "Pods-DemoSaveDataWithSQL-umbrella.h"
+
+  export *
+  module * { export * }
+}

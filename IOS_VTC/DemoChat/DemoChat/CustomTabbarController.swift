@@ -7,32 +7,31 @@
 //
 
 import UIKit
+import SocketIO
 
 class CustomTabbarController: UITabBarController {
     
     var user:User?
+    var friends:[Friend]?
+    
     var messageController:MessageCollectionController?
     
     override func viewDidLoad() {
         print("custom did load")
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         print("custom did appear")
         navigationItem.hidesBackButton = true
+        //        navigationItem.title = name
         
-        messageController = MessageCollectionController(collectionViewLayout: UICollectionViewFlowLayout())
+        messageController = MessageCollectionController()
         let messageTabbarItem = UITabBarItem(title: "Home", image: #imageLiteral(resourceName: "home"), tag:0)
         messageController?.tabBarItem = messageTabbarItem
-        messageController?.user = user
-        
-        
-        //        let messageNavigation = UINavigationController(rootViewController: messageController!)
-        //        messageNavigation.tabBarItem.image = #imageLiteral(resourceName: "home")
-        //        messageNavigation.title = "Home"
+        messageController?.user = self.user
+        messageController?.friends = self.friends
         
         let callController = UIViewController()
         let callNavigation = UINavigationController(rootViewController: callController)
@@ -50,12 +49,11 @@ class CustomTabbarController: UITabBarController {
         contactNavigation.title = "Contact"
         
         viewControllers = [messageController!,callNavigation,groupNavigation,contactNavigation]
-//        navigationItem.title = name
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print("custom will appear")
-       
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

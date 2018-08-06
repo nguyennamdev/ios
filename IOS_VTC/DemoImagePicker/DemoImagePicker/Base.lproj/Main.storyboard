@@ -34,13 +34,13 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olm-UL-nN3">
-                                            <rect key="frame" x="110" y="8" width="265" height="20.5"/>
+                                            <rect key="frame" x="110" y="8" width="265" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Sk-mb-UyG" customClass="RatingController" customModule="DemoImagePicker" customModuleProvider="target">
-                                            <rect key="frame" x="110" y="38.5" width="220" height="51.5"/>
+                                            <rect key="frame" x="110" y="46" width="220" height="44"/>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -85,7 +85,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ho7-27-NcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2849" y="-5"/>
+            <point key="canvasLocation" x="-2846" y="-21"/>
         </scene>
         <!--New Meal-->
         <scene sceneID="tne-QT-ifu">
@@ -128,7 +128,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.90795710080181768" green="1" blue="0.56786904009237205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6xn-qR-E1j" customClass="RatingController" customModule="DemoImagePicker" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6xn-qR-E1j" customClass="RatingController" customModule="DemoImagePicker" customModuleProvider="target">
                                 <rect key="frame" x="61" y="499" width="252" height="44"/>
                             </stackView>
                         </subviews>
@@ -169,7 +169,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1142" y="-6"/>
+            <point key="canvasLocation" x="-1010" y="-21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="To8-Lw-Ysy">
@@ -212,6 +212,6 @@
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IVW-Nk-XdN"/>
+        <segue reference="Yqj-7i-mjl"/>
     </inferredMetricsTieBreakers>
 </document>

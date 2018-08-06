@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loginNavigation = UINavigationController(rootViewController: loginController)
         
         
-        
         window?.rootViewController = loginNavigation
 //        let navigationBar = UINavigationBar.appearance()
 //        navigationBar.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
@@ -75,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "DemoChat")
+        let container = NSPersistentContainer(name: "DemoChatCoreData")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

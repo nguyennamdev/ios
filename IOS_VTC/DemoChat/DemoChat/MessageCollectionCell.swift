@@ -21,75 +21,119 @@ class BaseCell:UICollectionViewCell{
     }
 }
 
-class MessageHeader:BaseCell , UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+class MessageCell: BaseCell {
+    var message:Message?{
+        didSet{
+            guard let friend = message?.friend,
+                let text = message?.text,
+                let time = message?.date,
+                let _ = message?.isSender
+                else {
+                    return
+            }
+            guard let name = friend.name,
+                let image = friend.profileImageName
+                else {
+                    return
+            }
+            friendName.text = name
+            friendImage.image = UIImage(named: image)
+            messageLabel.text = text
+            let dateFormater = DateFormatter()
+            dateFormater.dateFormat = "h:mm a"
+            timeLabel.text = dateFormater.string(from: time as Date)
+        }
+    }
     
-    private let cellId = "cellId"
-    
-    let friendsActive:UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.backgroundColor = UIColor.clear
-        collection.translatesAutoresizingMaskIntoConstraints = false
-        return collection
+    let friendImage:UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.clipsToBounds = true
+        image.backgroundColor = UIColor.orange
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
     }()
     
-//    let label:UILabel = {
-//        let label = UILabel()
-//        label.text = "Những bạn đang online"
-//        label.textAlignment = .left
-//        label.textColor = UIColor.black
-//        label.font = UIFont.boldSystemFont(ofSize: 18)
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
+    let containView:UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let friendName:UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let messageLabel:UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.gray
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        return label
+    }()
+    
+    let timeLabel:UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = UIColor.gray
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        return label
+    }()
     
     override func setupView() {
         super.setupView()
-        backgroundColor = UIColor.blue
-//        addSubview(friendsActive)
-        
-        let viewww = UIView()
-        addSubview(viewww)
-        viewww.backgroundColor = UIColor.cyan
-        viewww.translatesAutoresizingMaskIntoConstraints = false
-        viewww.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        viewww.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        viewww.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        viewww.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        friendsActive.delegate = self
-        friendsActive.dataSource = self
-        
+        // add view
+        addSubview(friendImage)
+        addSubview(containView)
+        containView.addSubview(friendName)
+        containView.addSubview(messageLabel)
+        containView.addSubview(timeLabel)
+        setContraintLayout()
     }
     
-//    func setupConstraintLayout(){
-//        label.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
-//        label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
-//        label.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-//    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width, height: frame.height - 20)
+    func setContraintLayout(){
+        friendImage.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        friendImage.leadingAnchor.constraint(equalTo: self.leadingAnchor , constant: 12).isActive = true
+        friendImage.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        friendImage.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        friendImage.layer.cornerRadius = 30
+        
+        // constraint of contain view
+        containView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        containView.leftAnchor.constraint(equalTo: friendImage.rightAnchor, constant: 12).isActive = true
+        containView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8).isActive = true
+        containView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        // constraint of friend name
+        friendName.topAnchor.constraint(equalTo: containView.topAnchor, constant: 4).isActive = true
+        friendName.leftAnchor.constraint(equalTo: containView.leftAnchor, constant: 8).isActive = true
+        // constraint of message
+        messageLabel.bottomAnchor.constraint(equalTo: containView.bottomAnchor, constant: -8).isActive = true
+        messageLabel.leftAnchor.constraint(equalTo: containView.leftAnchor, constant: 8).isActive = true
+        messageLabel.rightAnchor.constraint(equalTo: containView.rightAnchor, constant: -20).isActive = true
+        // constraint of time
+        timeLabel.topAnchor.constraint(equalTo: containView.topAnchor, constant: 4).isActive = true
+        timeLabel.rightAnchor.constraint(equalTo: containView.rightAnchor, constant: -8).isActive = true
+        
     }
     
     
 }
 
-class MessageCell: BaseCell {
-    override func setupView() {
-        super.setupView()
-        
-        backgroundColor = UIColor.gray
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+

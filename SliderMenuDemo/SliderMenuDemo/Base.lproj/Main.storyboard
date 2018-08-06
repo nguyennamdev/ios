@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SliderMenuDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="4Oa-XV-2VL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KiS-ty-toN" userLabel="Slide View">
+                                <rect key="frame" x="0.0" y="20" width="175" height="647"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoP-Jd-g63">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="647"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g89-T3-kXX">
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="647"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsx-ow-Mhm">
+                                                    <rect key="frame" x="10" y="10" width="155" height="40"/>
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="cKs-x9-vvf"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Home"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXC-Fr-a29">
+                                                    <rect key="frame" x="10" y="60" width="155" height="40"/>
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="SYo-KX-x1A"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="XDU-c3-RhJ"/>
+                                                    </constraints>
+                                                    <state key="normal" title="About Us"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fsx-ow-Mhm" firstAttribute="top" secondItem="g89-T3-kXX" secondAttribute="top" constant="10" id="41e-Ax-8US"/>
+                                                <constraint firstAttribute="trailing" secondItem="fsx-ow-Mhm" secondAttribute="trailing" constant="10" id="CTm-yN-7Tb"/>
+                                                <constraint firstAttribute="trailing" secondItem="UXC-Fr-a29" secondAttribute="trailing" constant="10" id="Cka-nn-1DY"/>
+                                                <constraint firstItem="fsx-ow-Mhm" firstAttribute="leading" secondItem="g89-T3-kXX" secondAttribute="leading" constant="10" id="Crb-NF-oCs"/>
+                                                <constraint firstItem="UXC-Fr-a29" firstAttribute="leading" secondItem="g89-T3-kXX" secondAttribute="leading" constant="10" id="Q9J-yH-td6"/>
+                                                <constraint firstItem="UXC-Fr-a29" firstAttribute="top" secondItem="fsx-ow-Mhm" secondAttribute="bottom" constant="10" id="zWj-BW-NUA"/>
+                                            </constraints>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="4IL-NC-Q3m"/>
+                                    <constraint firstItem="PoP-Jd-g63" firstAttribute="width" secondItem="KiS-ty-toN" secondAttribute="width" id="DqM-io-Jw7"/>
+                                    <constraint firstItem="PoP-Jd-g63" firstAttribute="centerY" secondItem="KiS-ty-toN" secondAttribute="centerY" id="S2K-Ox-2uC"/>
+                                    <constraint firstItem="PoP-Jd-g63" firstAttribute="height" secondItem="KiS-ty-toN" secondAttribute="height" id="X8V-dj-2Jl"/>
+                                    <constraint firstItem="PoP-Jd-g63" firstAttribute="centerX" secondItem="KiS-ty-toN" secondAttribute="centerX" id="YrW-sd-cAj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KiS-ty-toN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3fX-Wv-iw1"/>
+                            <constraint firstItem="KiS-ty-toN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XGM-9i-ptN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KiS-ty-toN" secondAttribute="bottom" id="zUO-d0-3CU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blurView" destination="PoP-Jd-g63" id="rZU-sD-vd7"/>
+                        <outlet property="leftSlideViewContraint" destination="XGM-9i-ptN" id="g3N-Jn-fIC"/>
+                        <outlet property="slideView" destination="KiS-ty-toN" id="Twv-JJ-8yR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893.60000000000002" y="144.3778110944528"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="376" height="501"/>
+    </resources>
+</document>

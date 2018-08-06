@@ -93,7 +93,6 @@ class CategoryCell:UICollectionViewCell , UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if let app = appCategory?.apps?[indexPath.item]{
             featuredViewController?.showAppDetail(app: app)
         }

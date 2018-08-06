@@ -16,8 +16,6 @@ class FeatuedViewController: UICollectionViewController , UICollectionViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
 //        AppCategory.fetchFeatureApps { (appCategories) -> () in
 //            self.appCategories = appCategories
 //            self.collectionView?.reloadData()
